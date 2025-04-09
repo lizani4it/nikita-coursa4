@@ -1,0 +1,473 @@
+/* Подключение шрифтов */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rubik:wght@400;500&display=swap');
+@import url(../assets/fonts/Gilroy-semibold/gilroy-semibold.css);
+@import url(../assets/fonts/Gilroy-bold/gilroy-bold.css);
+
+/* По неизвестной мне причине без присвоения к html height: 100% градиент не работает */
+html {
+	height: 100%;
+}
+
+body {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+/* Фоновое изображение всей страницы */
+
+body {
+	background-color: #0f1145;
+	background-image: linear-gradient(10deg, #0f1145, #3b1d60);
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+/* Общие стили */
+
+* {
+	box-sizing: border-box;
+	font-size: 18px;
+}
+h1 {
+	font-family: Inter;
+	font-size: 2.4em;
+}
+h1, h2 {
+	color: $headers_color;
+}
+p {
+	font-family: Gilroy-SemiBold;
+	color: #8476aa;
+}
+input {
+	font-family: Rubik;
+	font-weight: 500;
+	font-size: 0.7em;
+	color: #fff;
+	background-color: $accent_color;
+	border: 1px solid $accent_color;
+	border-radius: 4px;
+	box-shadow: -11px 18px 37px rgba(242, 153, 74, 0.23);
+	text-align: center;
+	width: 157px;
+	height: 46px;
+}
+input[type="button"]:hover {
+	@include input_accent_dark;
+}
+span {
+	color: $accent_color;
+}
+.block {
+	display: flex;
+}
+.blockPart {
+	flex: 1;
+}
+.block input[type="button"] {
+	margin-top: 40px;
+}
+
+/* header */
+
+	/* Позиционирование */
+
+header {
+	padding-top: 80px;
+}
+.logo {
+	float: left;
+	margin-right: 25px;
+}
+.reg {
+	float: right;
+}
+
+	/* ---------------- */
+
+ul {
+	list-style-type: none;
+	padding-top: 8px;
+}
+ul li {
+	display: inline-block;
+	margin-left: 20px;
+}
+ul li a {
+	font-family: Gilroy-SemiBold;
+	font-size: 0.7rem;
+	color: #b5b5b5;
+	text-decoration:  none;
+	text-transform: uppercase;
+}
+ul li a:hover {
+	color: #969696;
+}
+header input {
+	font-size: 0.7rem;
+	width: 112px;
+	height: 36px;
+}
+.reg input:first-child {
+	color: $accent_color;
+	background-color: rgba(0, 0, 0, 0);
+	box-shadow: none;
+	margin-right: 20px;
+}
+/* --------------------- */
+
+/* first block */
+.block:first-child {
+	flex-wrap: wrap;
+	margin-top: 110px;
+	.blockPart:first-child {
+		flex: 1 1 550px;
+	}
+	.blockPart:nth-child(2) {
+		flex: 1 1 550px;
+		img {
+			width: 450px;
+			margin-left: 30%;
+		}
+	}
+	.blockPart:last-child {
+		flex: 2 1 1100px;
+		display: flex;
+		justify-content: space-around;
+		img {
+			opacity: 30%;
+		}
+	}
+	h1 + p {
+		margin-top: 19px;
+	}
+	input:last-child {
+		color: $accent_color;
+		background: rgba(0, 0, 0, .0);
+		box-shadow: none;
+		margin-left: 20px;
+	}
+	.video {
+		float: left;
+		background-color: #361c5d;
+		border-radius: 4px;
+		width: 140px;
+		height: 80px;
+		margin-right: 20px;
+	}
+	.videoBlock {
+		font-family: Rubik;
+		font-weight: 400;
+		margin-top: 60px;
+	}
+	.circle {
+		background-color: white;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		margin: 20px 50px;
+		padding: 13px 16px;
+	}
+	.circle:hover {
+		background-color: #a3a3a3;
+	}
+	.triangle {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 7.5px 0 7.5px 12px;
+		border-color: transparent transparent transparent #361c5d;
+	}
+	.videoBlock p {
+		&:first-of-type {
+			font-size: 0.9em;
+			padding-top: 4px;
+		}
+		&:last-child {
+			color: #6d6d78;
+			font-size: 0.8em;
+			margin-top: 6px;
+		}
+	}
+}
+/* --------------------------*/
+
+/* second block */
+.block:nth-child(2) {
+	display: block;
+	margin-top: 100px;
+	.blockPart:first-child {
+		text-align: center;
+		p {
+			margin: 15px 0;
+		}
+	}
+	.blockPart:last-child {
+		display: flex;
+		flex-wrap: wrap;
+		section {
+			flex: 1 1 33%;
+			margin-top: 35px;
+		}
+		p {
+			font-size: 0.8em;
+			width: 90%;
+		}
+		h2 {
+			font-family: Gilroy-Bold;
+		}
+	} 
+}
+	/* Добавление иконок */
+	.block:nth-child(2) .blockPart:last-child section {
+		background-repeat: no-repeat;
+		background-position: 0 1px;
+		padding-left: 52px;
+		&:nth-child(1) {
+			background-image: url(../assets/img/icon_1.png);
+		}
+		&:nth-child(2) {
+			background-image: url(../assets/img/icon_2.png);
+		}
+		&:nth-child(3) {
+			background-image: url(../assets/img/icon_3.png);
+		}
+		&:nth-child(4) {
+			background-image: url(../assets/img/icon_4.png);
+		}
+		&:nth-child(5) {
+			background-image: url(../assets/img/icon_5.png);
+		}
+		&:nth-child(6) {
+			background-image: url(../assets/img/icon_6.png);
+		}
+	}
+	/* ----------------- */
+/* ------------- */
+
+/* third block */
+.block:nth-child(3) {
+	margin-top: 150px;
+	.blockPart:first-child {
+		padding-top: 55px;
+		p {
+			margin-top: 40px;
+		}
+	}
+	.blockPart:last-child img {
+	 	margin-left: 100px;
+	}
+}
+/* ----------- */
+
+/* fourth block */
+.block:nth-child(4) {
+	display: block;
+	text-align: center;
+	margin-top: 150px;
+	.blockPart:first-child {
+		h1 {
+			font-size: 2em;
+			width: 810px;
+			margin: 0 auto;
+		}
+		p {
+			width: 500px;
+			margin: 32px auto 0 auto;
+		}
+	}
+	.blockPart:last-child {
+		display: flex;
+		margin-top: 48px;
+		section {
+			flex: 1;
+		}
+		section h2 {
+			font-family: Inter;
+			font-size: 2em;
+		}
+		section p {
+			width: 290px;
+			margin: 16px auto 0 auto;
+		}
+	}
+}
+/* ------------ */
+
+/* fifth block */
+.block:nth-child(5) {
+	text-align: center;
+	display: block;
+	margin-top: 170px;
+	padding-bottom: 150px;
+	h1 {
+		width: 790px;
+		margin: 0 auto;
+	}
+}
+/* ----- */
+
+/* sixth block */
+.block:nth-child(6) {
+	.blockPart:first-child {
+		padding-top: 50px;
+	}
+	p {
+		margin-top: 40px;
+	}
+	img {
+		margin-left: 150px;
+	}
+} 
+/* ----------- */
+
+/* seventh block */
+.block:nth-child(7) {
+	margin-top: 150px;
+	.blockPart:first-child img {
+		margin-left: 40px;
+	}
+	.blockPart:last-child {
+		padding-top: 60px;
+		h1 {
+			font-size: 1.5em;
+		}
+		h2 {
+			font-size: 0.84em;
+		}
+		p {
+			font-size: 0.84em;
+		}
+		h1 + p {
+			margin-top: 32px;
+		}
+		.features {
+			display: flex;
+			margin-top: 40px;
+		}
+		.features .feature {
+			flex: 1;
+			padding-top: 50px;
+			&:first-child {
+				background: url(../assets/img/icon_7.png) no-repeat;
+			}
+			&:last-child {
+				background: url(../assets/img/icon_8.png) no-repeat;
+			}
+			h2 {
+				font-family: Inter;
+			}
+			p {
+				margin-top: 8px;
+			}
+		}
+	}
+}
+/* ------------- */
+
+/* eighth */
+.block:last-child {
+	display: block;
+	background-color: rgba(60, 62, 125, 0.19);
+	text-align: center;
+	margin-top: 150px;
+	padding: 50px 155px 52px 155px;
+	h1 {
+		font-family: Rubik;
+		font-weight: 500;
+		color: $accent_color;
+	}
+	h1 + p {
+		font-family: Rubik;
+		font-weight: 400;
+		font-size: 0.9em;
+		color: #95a1bb;
+		width: 400px;
+		margin: 20px auto 0 auto;
+	}
+	input {
+		box-shadow: none;
+		height: 56px;
+	}
+	input[type="text"] {
+		color: rgba(255, 255, 255, 0.2);;
+		background-color: rgba(246, 246, 246, 0.1);;
+		text-align: left;
+		border: none;
+		width: 300px;
+		border-radius: 5px 0 0 5px;
+		padding: 17px;
+	}
+	input[type="submit"] {
+		width: 128px;
+		border-radius: 0 5px 5px 0;
+		margin-left: -5px;
+		cursor: pointer;
+		&:hover {
+			@include input_accent_dark;
+		}
+	}
+	p + input {
+		margin-top: 23px;
+	}
+	p:last-child {
+		font-size: 0.8em;
+		margin-top: 16px;
+	}
+}
+/* ------ */
+
+/* footer */
+footer {
+	margin-top: 185px;
+	.blockPart:first-child {
+		h1 {
+			float: left;
+			font-size: 1.5em;
+			color: $accent_color;
+			margin-top: 4px;
+		}
+		a {
+			float: right;
+		}
+	}
+	.blockPart:nth-child(2) {
+		display: flex;
+		justify-content: space-between;
+		clear: both;
+		.links {
+			margin-top: 86px;
+			h2 {
+				color: white;
+				font-family: Inter;
+				font-weight: 700;
+			}
+			a {
+				color: rgba(255, 255, 255, .8);
+				font-family: Inter;
+				font-weight: 400;
+				display: block;
+				text-decoration: none;
+				margin-top: 25px;
+			}
+			a:hover {
+				color: rgba(163, 163, 163, .8);
+			}
+		}
+	} 
+	.blockPart:last-child {
+		font-family: Inter;
+		font-weight: 400;
+		color: #8d8d8d;
+		display: flex;
+		justify-content: space-between;
+		width: 400px;
+		margin: 120px auto 0 auto;
+		padding-bottom: 100px;
+		p:hover {
+			color: #6a5b8c;
+		}
+	}
+}
+/* ------ */

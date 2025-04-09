@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'Gilroy-SemiBold';
+	src: url('fonts/gilroy-semibold.eot'); /* IE 9 Compatibility Mode */
+	src: url('fonts/gilroy-semibold.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('fonts/gilroy-semibold.woff2') format('woff2'), /* Super Modern Browsers */
+		url('fonts/gilroy-semibold.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('fonts/gilroy-semibold.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('fonts/gilroy-semibold.svg#gilroy-semibold') format('svg'); /* Chrome < 4, Legacy iOS */
+}
